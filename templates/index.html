@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>证件照处理工具</title>
+</head>
+<body>
+
+<h1>法考证件照处理</h1>
+
+<form
+    action="/upload"
+    method="post"
+    enctype="multipart/form-data"
+>
+    <input
+        type="file"
+        name="file"
+        accept="image/*"
+        required
+    >
+
+    <button type="submit">
+        开始处理
+    </button>
+</form>
+
+{% if result_image %}
+
+<hr>
+
+<h2>处理结果</h2>
+
+<img
+    src="{{ result_image }}"
+    width="300"
+>
+
+<br><br>
+
+<a
+    href="{{ result_image }}"
+    download
+>
+    下载照片
+</a>
+
+{% endif %}
+
+</body>
+</html>
